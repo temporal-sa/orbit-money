@@ -1,7 +1,8 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { formatMoney, roundCents, sum } from "../index.js";
+import { formatMoney, sum, toCents } from "../index.js";
 
-test("formats dollars with two decimals", () => assert.equal(formatMoney(28), "$28.00"));
-test("rounds to cents", () => assert.equal(roundCents(1.234), 1.23));
-test("sums amounts", () => assert.equal(sum([0.1, 0.2]), 0.3));
+test("formats cents as dollars", () => assert.equal(formatMoney(2800), "$28.00"));
+test("refuses fractional cents", () => assert.throws(() => formatMoney(28.5)));
+test("converts dollars to cents", () => assert.equal(toCents(1.234), 123));
+test("sums cents exactly", () => assert.equal(sum([10, 20]), 30));

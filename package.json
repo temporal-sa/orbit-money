@@ -1,6 +1,6 @@
 {
   "name": "orbit-money",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Small money helpers for Orbit Supply Co. A sandbox dependency for the Temporal agentic SDLC demo.",
   "type": "module",
   "exports": "./index.js",
